@@ -1,0 +1,16 @@
+
+    \begin{minipage}{\textwidth}
+        In diesem Abschnitt lernen wir\footnotemark:
+        \begin{itemize}
+            \item Neue Section mit \verb!\section{}!
+            \item Neue Zeilen mit \verb!\\! oder \verb!\newline!
+            \item Neuer Paragraph durch eine \textit{Leerzeile} im Code
+            \item[$\rightarrow$] Einrückung (Entgegenwirken mit \verb!\noindent!)
+            \item Listen mit \verb!\begin{itemize}! und \verb!\item!
+                        (was macht wohl \textit{enumerate}?)
+            \item Bilder, oder allgemeiner \textit{figures}
+            \item Den \verb!\ref{}!-Befehl
+            \item Fußnoten mit \verb!\footnote{footnotetext}!
+        \end{itemize}
+    \end{minipage}
+^^E^^L 

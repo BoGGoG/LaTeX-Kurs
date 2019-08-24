@@ -1,0 +1,107 @@
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+%\documentclass[handout]{beamer}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage {graphicx}
+\usepackage [T1]{fontenc}
+\usepackage{fancyvrb}
+
+\title[\LaTeX-Einführung Übung Beamer]{\LaTeX-Kurs Übung Beamer}
+\institute{Fachschaft Physik}
+\author{AutorAutor}
+\usetheme{Warsaw}
+\beamertemplatenavigationsymbolsempty
+
+\begin{document} 
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}[plain]{}
+    \tableofcontents
+\end{frame}
+
+\section{Grundlagen}
+\begin{frame}[fragile]{Theme}
+	\begin{itemize}
+	    \item \verb!\documentclass{beamer}!
+	    \item \verb!\usetheme{Warsaw}!
+        \pause
+		\item Ihr könnt aber auch gerne andere Themes ausprobieren!
+		\item Folie mit \verb+\begin{frame}{Frametitel} ... \end{frame}+
+	\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Beispielfolie}
+\begin{Verbatim}
+    \begin{frame}{Beispielfolie}
+        \begin{block}{Blockname}
+            \begin{itemize}
+                \item Bla
+                \pause
+                \item Blup
+            \end{itemize}
+        \end{block}
+    \end{frame}
+\end{Verbatim}    
+\end{frame}
+\begin{frame}{Beispielfolie}
+    \begin{block}{Blockname}
+        \begin{itemize}
+            \item Bla
+            \pause
+            \item Blup
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+
+\section{Block und Itemize}
+\begin{frame}[fragile]{Blöcke}
+	\begin{block}{Das hier ist ein Block}
+		Blöcke geben eurer Folie etwas mehr Struktur. Mit \verb+\pause+ kann
+		eine Pause eingebaut werden, das heißt, dass das danach erst nach einem
+		weiteren Klick kommt.
+	\end{block}
+	\pause
+	\begin{block}{Wichtig!}
+		\begin{itemize}
+			\item Immer \verb+\begin{block}{} ... \end{block}!+ \pause
+			\item In die Klammer kommt der "`Titel"' des Blockes. Diese Klammer muss unbedingt da stehen, sonst Fehler
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{block}{Sonstiges}
+		Um \verb!\verb+ Code +! benutzen zu können, muss die Folie als "`fragile"' deklariert werden (\verb+\begin{frame}[fragile])+)
+	\end{block}
+\end{frame}
+
+\begin{frame}{Blablup}
+		\begin{block}{Etwas mit Beamer herumspielen}
+			\begin{itemize}
+				\item<1-2> Probiert doch mal das hier aus
+				\item<2> Jetzt ist es hier, gleich nicht mehr
+				\item<3-> Das hier bleibt
+			\end{itemize}
+			\end{block}
+		    \pause \pause \pause
+			\begin{equation}
+			e^{i \pi} \pause = \pause -1
+			\end{equation}
+\end{frame}
+\begin{frame}[fragile]{Letzte Folie als Code}
+        \begin{Verbatim}
+\begin{block}{Etwas mit Beamer herumspielen}
+    \begin{itemize}
+        \item<1-2> Probiert doch mal das hier aus
+        \item<2> Jetzt ist es hier, gleich nicht mehr
+        \item<3-> Das hier bleibt
+    \end{itemize}
+\end{block}
+\pause \pause \pause
+\begin{equation}
+    e^{i \pi} \pause = \pause -1
+\end{equation}
+        \end{Verbatim}
+\end{frame}
+\end{document}

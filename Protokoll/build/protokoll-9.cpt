@@ -1,0 +1,16 @@
+
+    \begin{minipage}{\textwidth}
+\begin{Verbatim}
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+\begin{thebibliography}{abc}
+    \bibitem{wiki:wuerfel} Wikipedia(2016) Spielwürfel (www-site)
+        \url{https://de.wikipedia.org/wiki/Spielwürfel}
+    \bibitem{wiki:binomial} Wikipedia (2016) Binomialverteilung (www-site)
+        \url{https://de.wikipedia.org/wiki/Binomialverteilung}
+\end{thebibliography}
+\end{Verbatim}
+\\
+Im Text kann man dann mit \verb!\cite{wiki:wuerfel}! verweisen.\\
+Für \verb!\url{}! ist \verb!\usepackage{hyperref}! nötig!
+    \end{minipage}
+^^E^^L 

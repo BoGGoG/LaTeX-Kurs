@@ -1,0 +1,9 @@
+
+        \begin{minipage}{.85\textwidth}
+        cref:\\
+        Wie in \cref{eq:pythagoras} zu sehen ist
+        \begin{Verbatim}
+Wie in \cref{eq:pythagoras} zu sehen ist
+        \end{Verbatim}
+    \end{minipage}
+^^E^^L 

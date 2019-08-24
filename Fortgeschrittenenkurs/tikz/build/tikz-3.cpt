@@ -1,0 +1,9 @@
+
+    \begin{minipage}{.4\textwidth}
+        \begin{Verbatim}
+\begin{tikzpicture}
+    \draw (0,0) -- (1,1);
+\end{tikzpicture}
+        \end{Verbatim}
+    \end{minipage}
+^^E^^L 

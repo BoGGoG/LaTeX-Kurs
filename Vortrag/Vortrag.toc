@@ -1,0 +1,15 @@
+\babel@toc {ngerman}{}
+\beamer@sectionintoc {1}{Um was geht es heute?}{4}{0}{1}
+\beamer@sectionintoc {2}{Was ist \hologoRobust {LaTeX}{}?}{5}{0}{2}
+\beamer@sectionintoc {3}{\hologoRobust {LaTeX}{}-Grundlagen}{12}{0}{3}
+\beamer@sectionintoc {4}{Bau unseres Praktikumprotokolls}{17}{0}{4}
+\beamer@subsectionintoc {4}{1}{Hello World}{17}{0}{4}
+\beamer@subsectionintoc {4}{2}{Titelseite}{20}{0}{4}
+\beamer@subsectionintoc {4}{3}{Strukturierung unseres Protokolls}{21}{0}{4}
+\beamer@subsectionintoc {4}{4}{Itemize}{31}{0}{4}
+\beamer@subsectionintoc {4}{5}{Textanpassungen}{38}{0}{4}
+\beamer@subsectionintoc {4}{6}{Einf\IeC {\"u}gen von Bildern}{40}{0}{4}
+\beamer@subsectionintoc {4}{7}{Tabellen}{47}{0}{4}
+\beamer@subsectionintoc {4}{8}{Mathematische Ausdr\IeC {\"u}cke}{55}{0}{4}
+\beamer@subsectionintoc {4}{9}{Abbildungs- und Literaturverzeichnis}{78}{0}{4}
+\beamer@sectionintoc {5}{Sonstiges}{84}{0}{5}

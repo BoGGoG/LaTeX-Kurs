@@ -1,0 +1,10 @@
+
+    \begin{minipage}{\textwidth}
+        Wichtige Befehle hier:
+        \begin{itemize}
+            \item \verb!\begin{table}! (float Umgebung)
+            \item \verb!\begin{tabular}! (die eigentliche Tabelle)
+            \item \verb!\caption{text}! (Tabellenunterschrift)
+        \end{itemize}
+    \end{minipage}
+^^E^^L 

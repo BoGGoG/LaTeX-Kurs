@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {ngerman}
+\beamer@sectionintoc {1}{Um was geht es heute?}{3}{0}{1}
+\beamer@sectionintoc {2}{Was ist \LaTeX {}?}{4}{0}{2}
+\beamer@sectionintoc {3}{\LaTeX {}-Grundlagen}{11}{0}{3}
+\beamer@sectionintoc {4}{Bau unseres Praktikumprotokolls}{16}{0}{4}
+\beamer@subsectionintoc {4}{1}{Hello World}{16}{0}{4}
+\beamer@subsectionintoc {4}{2}{Titelseite}{19}{0}{4}
+\beamer@subsectionintoc {4}{3}{Strukturierung unseres Protokolls}{20}{0}{4}
+\beamer@subsectionintoc {4}{4}{Itemize}{30}{0}{4}
+\beamer@subsectionintoc {4}{5}{Textanpassungen}{37}{0}{4}
+\beamer@subsectionintoc {4}{6}{Einf\IeC {\"u}gen von Bildern}{39}{0}{4}
+\beamer@subsectionintoc {4}{7}{Tabellen}{46}{0}{4}
+\beamer@subsectionintoc {4}{8}{Mathematische Ausdr\IeC {\"u}cke}{54}{0}{4}
+\beamer@subsectionintoc {4}{9}{Abbildungs- und Literaturverzeichnis}{77}{0}{4}
+\beamer@sectionintoc {5}{Sonstiges}{83}{0}{5}

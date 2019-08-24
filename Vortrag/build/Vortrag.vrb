@@ -1,0 +1,21 @@
+\frametitle{Seitengestaltung}
+\begin{block}{Kopf- und Fußzeilen}
+        \begin{itemize}
+            \item Früher \textit{scrpage2} für KOMA-Script Klassen (scrartcl)
+            \item Jetzt \textit{scrlayer}
+            \item Beispiel aus KOMA-Script Anleitung:
+                \begin{Verbatim}
+\documentclass{scrartcl}
+\usepackage{scrlayer-scrpage}
+\lohead{Peter Musterheinzel}
+\rohead{Seitenstile mit \KOMAScript}
+\pagestyle{scrheadings}
+\begin{document}
+\title{Seitenstile mit \KOMAScript}
+\author{Peter Musterheinzel}
+\maketitle
+\end{document}
+                \end{Verbatim}
+        \end{itemize}
+    \end{block}
+

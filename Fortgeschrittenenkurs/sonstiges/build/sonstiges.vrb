@@ -1,0 +1,28 @@
+\frametitle{Beispiel cref}
+\begin{equation}
+        a^2 + b^2 = c^2
+        \label{eq:pythagoras}
+    \end{equation}
+    \cprotect\fbox{
+        \begin{minipage}{.85\textwidth}
+        ref:\\
+        Wie in Gleichung~(\ref{eq:pythagoras}) zu sehen ist
+        \begin{Verbatim}
+Wie in Gleichung~(\ref{eq:pythagoras}) zu sehen ist
+        \end{Verbatim}
+    \end{minipage}
+}
+\\ ~\\~\\
+    \cprotect\fbox{
+        \begin{minipage}{.85\textwidth}
+        cref:\\
+        Wie in \cref{eq:pythagoras} zu sehen ist
+        \begin{Verbatim}
+Wie in \cref{eq:pythagoras} zu sehen ist
+        \end{Verbatim}
+    \end{minipage}
+}
+    \pause
+    \\
+    \bigskip
+    Anpassung mit z.B.\ \verb!\crefname{equation}{Glg.}{Glgn.}!

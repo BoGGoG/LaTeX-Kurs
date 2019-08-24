@@ -1,0 +1,16 @@
+
+    \begin{minipage}{\textwidth}
+        Textanpassungen:
+        \begin{itemize}
+            \item Textgrößen: \verb!\begin{tiny} blabla \end{tiny}! oder
+                \verb!\tiny!
+            \item tiny, scriptsize, footnotesize, small, normalsize, large,
+                Large, LARGE, huge, Huge
+            \item \verb!\textbf{fetter Text}!: \textbf{fett}
+            \item \verb!\underline{unterstrichener Text}!: \underline{unterstrichen}
+            \item \verb!\textit{kursiver Text}! (italic): \textit{italic}
+            \item \verb!\emph{betont}!: \emph{betont}
+            \item \verb!\textsc{kapitälchen}!: \textsc{Das sind Kapitälchen}
+        \end{itemize}
+    \end{minipage}
+^^E^^L 

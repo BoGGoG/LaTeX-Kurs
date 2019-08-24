@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {ngerman}
+\beamer@sectionintoc {1}{Grundlagen}{3}{0}{1}
+\beamer@sectionintoc {2}{Block und Itemize}{8}{0}{2}

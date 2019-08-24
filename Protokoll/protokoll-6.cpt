@@ -1,0 +1,10 @@
+
+    \begin{minipage}{1.1\textwidth}
+\LaTeX{}-Code dafür:
+\begin{Verbatim}
+ \begin{equation}
+    \vec{x} = \sum\limits_{i = 1}^{n} x_i \vec{e}_i
+ \end{equation}
+\end{Verbatim}
+    \end{minipage}
+^^E^^L 

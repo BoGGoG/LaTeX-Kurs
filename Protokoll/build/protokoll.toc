@@ -1,0 +1,10 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Geschichte des Gl\IeC {\"u}cksspiels}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Einf\IeC {\"u}hrung}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Der W\IeC {\"u}rfel}{4}{subsection.1.2}
+\contentsline {section}{\numberline {2}Versuchsaufbau und Ergebnisse}{6}{section.2}
+\contentsline {section}{\numberline {3}Wahrscheinlichkeitsverteilungen}{7}{section.3}
+\contentsline {section}{\numberline {4}Versuchsauswertung}{9}{section.4}
+\contentsline {section}{\numberline {5}Zusammenfassung und Ausblick}{10}{section.5}
+\contentsline {section}{Abbildungsverzeichnis}{11}{section.5}
+\contentsline {section}{Literaturverzeichnis}{13}{section*.6}

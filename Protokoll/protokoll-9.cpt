@@ -1,0 +1,21 @@
+
+    \begin{minipage}{1.1\textwidth}
+        Weitere wichtige Mathe-Befehle:\\
+        Inline Mathe Formeln mit \verb!$\mu$!\\\\
+        $\left( \frac{\frac{1}{2} + 1}{3} \right) \neq ( \frac{\frac{1}{2} + 1}{3} )$\\
+        \verb!$\left(\frac{\frac{1}{2}+1}{3}\right) \neq (\frac{\frac{1}{2}+1}{3})!\\
+        \\
+        $\pi \in \mathbb R$ \\
+        \verb!\pi \in \mathbb R! \\
+        \\
+        $\mathbf{F}_C = \frac{1}{4 \pi \epsilon_0}\frac{q_1 q_2}{r^3}\mathbf{\hat{r}}$\\
+        \verb!\mathbf{F}_C = \frac{1}{4 \pi \epsilon_0}\frac{q_1 q_2}{r^3}\mathbf{\hat{r}}!
+        \\ \\
+        $\vec{v}$\\
+        \verb!\vec{v}!\\\\
+        $\underbrace{1 + 2}_3$\\
+        \verb!\underbrace{1 + 2}_3!\\\\
+
+        Mit dem bm Package: kursive fette Buchstaben $a B ~ \mathbf{a} \mathbf{B} ~ \bm{a} \bm{B}$
+    \end{minipage}
+^^E^^L 

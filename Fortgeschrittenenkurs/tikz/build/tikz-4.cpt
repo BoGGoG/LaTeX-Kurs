@@ -1,0 +1,10 @@
+
+    \begin{minipage}{.66\textwidth}
+        \begin{Verbatim}
+\begin{tikzpicture}
+    \draw[help lines] (0,0) grid (3,3);
+    \draw (0,0) -- (1,1);
+\end{tikzpicture}
+        \end{Verbatim}
+    \end{minipage}
+^^E^^L 

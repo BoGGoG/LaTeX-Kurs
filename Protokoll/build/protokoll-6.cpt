@@ -1,0 +1,12 @@
+
+    \begin{minipage}{\textwidth}
+Wichtige Befehle in diesem Abschnitt:
+\begin{Verbatim}
+\begin{quote} . . . \end{quote}
+\begin{equation} . . . \end{equation}
+\begin{align} . . . \end{align}
+\sum_{k=0}^n \int_{0}^{\infty} \quad \dots \dotsc \cdots
+\mu \sigma \mathrm{d}x \pm
+\end{Verbatim}
+    \end{minipage}
+^^E^^L 

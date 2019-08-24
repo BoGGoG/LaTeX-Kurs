@@ -1,0 +1,12 @@
+
+    \begin{minipage}{\textwidth}
+\begin{verbatim}
+\newpage
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoffigures
+\newpage
+\end{verbatim}
+addcontentsline fügt ins Inhaltsverzeichnis\footnote{toc, table of contents}
+etwas ein.\\
+    \end{minipage}
+^^E^^L 

@@ -1,0 +1,11 @@
+
+    \begin{minipage}{1.1\textwidth}
+\LaTeX{}-Code dafür:
+\begin{Verbatim}
+ \begin{equation}
+   B(k|p,n) = \binom {n}{k} p^k (1-p)^{n-k}\quad \text{für}\quad k=0,1,\dots, n,
+   \label{eq:binomial}
+ \end{equation}
+\end{Verbatim}
+    \end{minipage}
+^^E^^L 

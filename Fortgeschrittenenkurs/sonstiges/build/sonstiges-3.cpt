@@ -1,0 +1,9 @@
+
+        \begin{minipage}{.85\textwidth}
+        ref:\\
+        Wie in Gleichung~(\ref{eq:pythagoras}) zu sehen ist
+        \begin{Verbatim}
+Wie in Gleichung~(\ref{eq:pythagoras}) zu sehen ist
+        \end{Verbatim}
+    \end{minipage}
+^^E^^L 

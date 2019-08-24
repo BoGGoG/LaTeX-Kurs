@@ -1,0 +1,23 @@
+
+    \begin{minipage}{\textwidth}
+        \begin{Verbatim}
+\usepackage{subcaption}
+
+\begin{figure}[h]
+    \begin{subfigure}[h]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/bildwuerfel1}
+        \caption{Erstes Würfelbild}
+        \label{fig:wuerfel1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[h]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/bildwuerfel2}
+        \caption{Zweites Würfelbild}
+        \label{fig:wuerfel2}
+    \end{subfigure}
+    \caption{Gesamtbild-Unterschrift}
+    \label{fig:wuerfels}
+\end{figure}
+        \end{Verbatim}
+    \end{minipage}
+^^E^^L 

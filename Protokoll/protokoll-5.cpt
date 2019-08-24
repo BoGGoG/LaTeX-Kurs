@@ -1,0 +1,10 @@
+
+    \begin{minipage}{1.1\textwidth}
+\LaTeX{}-Code dafür:
+\begin{Verbatim}
+ \begin{equation}
+    E = m c^2
+ \end{equation}
+\end{Verbatim}
+    \end{minipage}
+^^E^^L 

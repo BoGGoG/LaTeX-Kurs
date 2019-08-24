@@ -1,0 +1,14 @@
+\frametitle{Letzte Folie als Code}
+\begin{Verbatim}
+\begin{block}{Etwas mit Beamer herumspielen}
+    \begin{itemize}
+        \item<1-2> Probiert doch mal das hier aus
+        \item<2> Jetzt ist es hier, gleich nicht mehr
+        \item<3-> Das hier bleibt
+    \end{itemize}
+\end{block}
+\pause \pause \pause
+\begin{equation}
+    e^{i \pi} \pause = \pause -1
+\end{equation}
+        \end{Verbatim}

@@ -1,0 +1,34 @@
+\documentclass{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{media9}
+
+\begin{document}
+\begin{figure}
+    \centering
+    \includemedia[
+        width=7.11cm,height=4cm,
+        activate=pageopen,
+        flashvars={
+            modestbranding=1 % no YT logo in control bar
+            &autohide=1 % controlbar autohide
+            &showinfo=0 % no title and other info before start
+            &rel=0 % no related videos after end
+        },
+        url % Flash loaded from URL
+%]{}{http://www.youtube.com/v/bHub7MwGJjE?rel=0}
+    ]{}{http://www.youtube.com/v/bXklwwzglao?rel=0}
+\end{figure}
+\includemedia[
+flashvars={
+source=http://mp3channels.webradio.antenne.de:80/antenne
+&autoPlay=true
+},
+transparent
+]{\color{blue}\fbox{Listen live to Antenne Bayern}}{%
+APlayer.swf%
+}
+\end{document}

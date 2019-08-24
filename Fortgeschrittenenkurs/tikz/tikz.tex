@@ -1,0 +1,461 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[ngerman, hyperref={pdfpagelabels=false}]{beamer}
+%\documentclass[handout]{beamer}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usefonttheme{serif}
+\usepackage[utf8]{inputenc}
+\usepackage {graphicx}
+\usepackage [T1]{fontenc}
+%\usepackage{listings} %Quellcode mit \lstinline{} oder mit \begin ... darstellen
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{slashed}
+\usepackage{braket}
+
+\usepackage{cprotect}
+
+\usepackage{animate}
+\usepackage{media9}
+\usepackage{spreadtab}
+
+%\usepackage{caption}
+%\usepackage{subcaption}
+%\captionsetup[subfigure]{labelformat=empty}
+
+% TikZ
+%\usepackage[landscape]{geometry}
+\usepackage{adjustbox}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calendar,shadings}
+%\usetikzlibrary{mindmap}
+%\usepackage{metalogo}
+%\usepackage{dtklogos}
+%\usepackage{adjustbox}
+
+\usetikzlibrary{decorations.markings}
+\tikzstyle{vertex}=[circle, draw, inner sep=0pt, minimum size=13pt]
+\newcommand{\vertex}{\node[vertex]}
+\usepackage{calc}
+\newcounter{Angle}
+
+\colorlet{winter}{blue}
+\colorlet{spring}{green!60!black}
+\colorlet{summer}{orange}
+\colorlet{fall}{red}
+\renewcommand*{\familydefault}{\sfdefault}
+\newcount\mycount
+
+\usepackage{bbding}
+\usepackage{overpic}
+
+\usepackage{cleveref}
+%\crefname{equation}{Glg.}{Glgn.}
+
+%\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
+\title[TiKz]{TikZ - Das Package mit dem Backronym als Namen \\
+\flqq TikZ ist kein Zeichenprogramm\frqq}
+\institute{Fachschaft Physik}
+\author[Ole, Marco]{Ole Hinrichs, Marco Knipfer}
+%\usetheme{Warsaw}
+\usetheme{Madrid}
+\usecolortheme{default}
+\beamertemplatenavigationsymbolsempty
+\providecommand{\thispdfpagelabel}[1]{}
+
+\begin{document} 
+\begin{frame}{}
+    \maketitle
+\end{frame}
+
+\begin{frame}{Ein kleines Beispiel vorneweg}
+    Beispiel von Kjell Magne Fauske 
+    \url{http://www.texample.net/tikz/examples/global-nodes/}
+     %For every picture that defines or uses external nodes, you'll have to
+% apply the 'remember picture' style. To avoid some typing, we'll apply
+% the style to all pictures.
+    \tikzstyle{every picture}+=[remember picture]
+
+% By default all math in TikZ nodes are set in inline mode. Change this to
+% displaystyle so that we don't get small fractions.
+    \everymath{\displaystyle}
+
+    \begin{itemize}
+        \item Coriolis acceleration
+            \tikz\node [fill=blue!20,draw,circle] (n1) {};
+    \end{itemize}
+
+% Below we mix an ordinary equation with TikZ nodes. Note that we have to
+% adjust the baseline of the nodes to get proper alignment with the rest of
+% the equation.
+    \begin{equation}
+        \vec{a}_p = \vec{a}_o+\frac{{}^bd^2}{dt^2}\vec{r} +
+        \tikz[baseline]{
+            \node[fill=blue!20,anchor=base] (t1)
+            {$ 2\vec{\omega}_{ib}\times\frac{{}^bd}{dt}\vec{r}$};
+        } +
+        \tikz[baseline]{
+            \node[fill=red!20,anchor=base] (t2)
+            {$\vec{\alpha}_{ib}\times\vec{r}$};
+        } +
+        \tikz[baseline]{
+            \node[fill=green!20,anchor=base] (t3)
+            {$\vec{\omega}_{ib}\times(\vec{\omega}_{ib}\times\vec{r})$};
+        }
+    \end{equation}
+
+    \begin{itemize}
+        \item Transversal acceleration
+            \tikz\node [fill=red!20,draw,circle] (n2) {};
+        \item Centripetal acceleration
+            \tikz\node [fill=green!20,draw,circle] (n3) {};
+    \end{itemize}
+
+% Now it's time to draw some edges between the global nodes. Note that we
+% have to apply the 'overlay' style.
+    \begin{tikzpicture}[overlay]
+        \path[->] (n1) edge [bend left] (t1);
+        \path[->] (n2) edge [bend right] (t2);
+        \path[->] (n3) edge [out=0, in=-90] (t3);
+    \end{tikzpicture}
+\end{frame}
+\begin{frame}{Noch ein Beispiel}
+   Authors: Till Tantau, Stefan Kottwitz\\
+   \url{http://www.texample.net/tikz/examples/calendar-circles/}
+   \begin{adjustbox}{max totalsize={.9\textwidth}{.7\textheight},center}
+   \begin{tikzpicture}[transform shape,
+       every day/.style={anchor=mid,font=\tiny}]
+       \node[circle,shading=radial,outer color=blue!30,inner color=white,
+       minimum width=15cm] {\textcolor{blue!80!black}{\Huge\the\year}};
+       \foreach \month/\monthcolor in
+       {1/winter,2/winter,3/spring,4/spring,5/spring,6/summer,
+           7/summer,8/summer,9/fall,10/fall,11/fall,12/winter} {
+      % Computer angle:
+           \mycount=\month
+           \advance\mycount by -1
+           \multiply\mycount by 30
+           \advance\mycount by -90
+           \shadedraw[shading=radial,outer color=\monthcolor!30,middle color=white,
+           inner color=white,draw=none] (\the\mycount:5.4cm) circle(1.4cm);
+      % The actual calendar
+           \calendar at (\the\mycount:5.4cm) [
+           dates=\the\year-\month-01 to \the\year-\month-last]
+           if (day of month=1) {\large\color{\monthcolor!50!black}\tikzmonthcode}
+           if (Sunday) [red]
+           if (all) {
+      % Again, compute angle
+               \mycount=1
+               \advance\mycount by -\pgfcalendarcurrentday
+               \multiply\mycount by 11
+               \advance\mycount by 90
+       \pgftransformshift{\pgfpointpolar{\mycount}{1.2cm}}};}
+   \end{tikzpicture}
+   \end{adjustbox}
+\end{frame}
+\begin{frame}[fragile]{Ok, wie funktioniert dieses TikZ?}{Ein TikZ Hello World}
+    Basierend auf 
+    \begin{footnotesize}
+        \url{http://www.viitoriolimpici.ro/uploads/attach_data/38/9/6//an_interactive_introduction_to_latex_part_3.pdf}
+    \end{foonotesize}
+    \\ ~\\
+    \begin{minipage}{.4\textwidth}
+        \begin{tikzpicture}
+            \draw (0,0) -- (1,1); 
+        \end{tikzpicture}
+    \end{minipage}
+    \cprotect\fbox{
+    \begin{minipage}{.4\textwidth}
+        \begin{Verbatim}
+\begin{tikzpicture}
+    \draw (0,0) -- (1,1); 
+\end{tikzpicture}
+        \end{Verbatim}
+    \end{minipage}
+}
+\pause
+\\ ~\\~\\
+Hilfreich, das Grid anzeigen zu lassen:\\
+    \begin{minipage}{.3\textwidth}
+        \begin{tikzpicture}
+            \draw[help lines] (0,0) grid (3,3);
+            \draw (0,0) -- (1,1); 
+        \end{tikzpicture}
+    \end{minipage}
+    \cprotect\fbox{
+    \begin{minipage}{.66\textwidth}
+        \begin{Verbatim}
+\begin{tikzpicture}
+    \draw[help lines] (0,0) grid (3,3);
+    \draw (0,0) -- (1,1); 
+\end{tikzpicture}
+        \end{Verbatim}
+    \end{minipage}
+}
+\end{frame}
+\begin{frame}[fragile]{Weiter TikZ Grundlagen}
+    \begin{itemize}
+        \item Sachen werden mit \verb!\draw! gezeichnet
+        \item Jeder Befehl endet mit \verb!;!
+            \pause
+        \item Pfeile?\\
+            \begin{minipage}{.25\textwidth}
+            \begin{tikzpicture}
+                \draw[help lines] (0,0) grid (3,3);
+                \draw[->] (0,0) -- (1,1);
+                \draw[<->, thick] (2,1) -- (1,2);
+                \draw[<-, thick, dashed] (2,2)--(3,3);
+            \end{tikzpicture}
+            \end{minipage}
+            \begin{minipage}{.67\textwidth}
+            \begin{Verbatim}[fontsize=\small, frame=single]
+\begin{tikzpicture}
+    \draw[help lines] (0,0) grid (3,3);
+    \draw[->] (0,0) -- (1,1);
+    \draw[<->, thick] (2,1) -- (1,2);
+    \draw[<-, thick, dashed] (2,2)--(3,3);
+\end{tikzpicture}
+            \end{Verbatim}
+        \end{minipage}
+        \pause
+    \item Pfade, indem man einfach mehrere Punkte angibt:\\
+        \verb!\draw[<->, thick] (0,4)--(0,0)--(4,0);!
+    \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Pfade}
+    \begin{minipage}{0.3\textwidth}
+    \begin{tikzpicture}
+        \draw[help lines] (0,0) grid (3,4);
+        \draw[<->, thick] (0,4)--(0,0)--(3,0); 
+        \draw (.5,.5) -- (.5,3.5) --
+        (2.5,3.5) -- (2.5,.5) --
+        cycle;
+    \end{tikzpicture}
+    \end{minipage}
+    \begin{minipage}{0.55\textwidth}
+        \begin{Verbatim}
+\begin{tikzpicture}
+    \draw[help lines] (0,0) grid (3,4);
+    \draw[<->, thick] (0,4)--(0,0)--(3,0); 
+    \draw (.5,.5) -- (.5,3.5) --
+    (2.5,3.5) -- (2.5,.5) --
+    cycle;
+\end{tikzpicture}
+        \end{Verbatim}
+    \end{minipage}
+\end{frame}
+\begin{frame}[fragile]{Ausfüllen von Flächen}
+    \begin{minipage}{0.27\textwidth}
+    \begin{tikzpicture}
+        \draw[help lines] (0,0) grid (3,4);
+        \draw[<->, thick, red] (0,4)--(0,0)--(3,0); 
+        \draw[blue, fill=yellow] (.5,.5) -- (.5,3.5) --
+        (2.5,3.5) -- (2.5,.5) --
+        cycle;
+    \end{tikzpicture}
+    \end{minipage}
+    \begin{minipage}{0.55\textwidth}
+        \begin{Verbatim}[fontsize=\small]
+\begin{tikzpicture}
+ \draw[help lines] (0,0) grid (3,4);
+ \draw[<->, thick, red] (0,4)--(0,0)--(3,0); 
+ \draw[blue, fill=yellow (.5,.5) -- (.5,3.5) --
+ (2.5,3.5) -- (2.5,.5) --
+ cycle;
+\end{tikzpicture}
+        \end{Verbatim}
+    \end{minipage}
+\end{frame}
+\begin{frame}[fragile]{einfache Formen: Kreis, Rechteck}
+    \begin{minipage}{0.27\textwidth}
+    \begin{tikzpicture}
+        \draw[help lines] (0,0) grid (3,4);
+        \draw[fill=blue] (1,1) circle (0.4);
+        % Mittelpunkt, Radius
+        \draw[thick, blue] (1,2) rectangle (2.5, 3);
+        % links unten, rechts oben
+    \end{tikzpicture}
+    \end{minipage}
+    \begin{minipage}{0.55\textwidth}
+        \begin{Verbatim}[fontsize=\small]
+\begin{tikzpicture}
+    \draw[help lines] (0,0) grid (3,4);
+    \draw[fill=blue] (1,1) circle (0.4);
+    % Mittelpunkt, Radius
+    \draw[thick, blue] (1,2) rectangle (2.5, 3);
+    % links unten, rechts oben
+\end{tikzpicture}
+        \end{Verbatim}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{Nodes - Praktische Koordinaten}
+    \begin{minipage}{0.27\textwidth}
+    \begin{tikzpicture}
+        \draw[help lines] (0,0) grid (3,4);
+        \node (a) at (.3, .3) {a};
+        \node (b) at (1.5, 2) {$\phi$};
+        \node (c) at (.3, 2.5) {$\xi$};
+        \node (d) at (2.2, .3) {$\zeta$};
+        \draw[->] (a) -- (b);
+        \draw[->] (a) -- (c);
+        \draw[->] (a) -- (d);
+    \end{tikzpicture}
+    \end{minipage}
+    \begin{minipage}{0.55\textwidth}
+        \begin{Verbatim}[fontsize=\small]
+    \begin{tikzpicture}
+        \draw[help lines] (0,0) grid (3,4);
+        \node (a) at (.3, .3) {a};
+        \node (b) at (1.5, 2) {$\phi$};
+        \node (c) at (.3, 2.5) {$\xi$};
+        \node (d) at (2.2, .3) {$\zeta$};
+        \draw[->] (a) -- (b);
+        \draw[->] (a) -- (c);
+        \draw[->] (a) -- (d);
+    \end{tikzpicture}
+        \end{Verbatim}
+    \end{minipage}
+\end{frame}
+\begin{frame}[fragile]{Funktionen Plotten}
+    \begin{minipage}{0.27\textwidth}
+    \begin{tikzpicture}
+        \draw[help lines] (0,-1) grid (3,4);
+        \draw[->] (0,0) -- (0,3);
+        \draw[->] (0,0) -- (3,0);
+        \node (a) at (0, 0) {$0$};
+        \node (b) at (2, 2) {$x$};
+        \draw[->] (a) -- (b);
+        \draw[blue,domain=0:3]
+            plot (\x, {sin(\x r)});
+        \draw[red,domain=0:3]
+        plot (\x, {\x - .166*\x^3});
+    \end{tikzpicture}
+    \end{minipage}
+    \begin{minipage}{0.55\textwidth}
+        \begin{Verbatim}[fontsize=\small]
+\begin{tikzpicture}
+    \draw[help lines] (0,-1) grid (3,4);
+    \draw[->] (0,0) -- (0,3);
+    \draw[->] (0,0) -- (3,0);
+    \node (a) at (0, 0) {$0$};
+    \node (b) at (2, 2) {$x$};
+    \draw[->] (a) -- (b);
+    \draw[blue,domain=0:3]
+        plot (\x, {sin(\x r)});
+    \draw[red,domain=0:3]
+        plot (\x, {\x - .166*\x^3});
+\end{tikzpicture}
+        \end{Verbatim}
+    \end{minipage}
+\end{frame}
+\begin{frame}{Wie war das mit dem Pagerank-Algorithmus?}
+    \begin{minipage}{.39\textwidth}
+        \begin{tikzpicture}[x=1.3cm, y=1cm,
+                every edge/.style={
+                    draw,
+                    postaction={decorate,
+                        decoration={markings,mark=at position 0.5 with {\arrow{>}}}
+                    }
+                }
+            ]
+            \vertex (A) at (0,0) [label=above: A]{1};
+            \vertex (B) at (1,1) [label=above: B]{1};
+            \vertex (C) at (1,-1) [label=above: C]{1};
+            \vertex (D) at (2,0) [label=above: D]{1};
+            \vertex (E) at (3,1) [label=above: E]{1};
+            \path
+            (A) edge (B)
+            (A) edge (C)
+            (B) edge (D)
+            (C) edge (D)
+            (E) edge (B)
+            ;
+        \end{tikzpicture}
+    \end{minipage}
+    \begin{minipage}{.55\textwidth}
+        \begin{equation*}
+            \mathrm{pr}_{n+1} = \frac{1-d}{|V|} + d \cdot \sum_{\substack{w\in V
+            \text{mit}\\w\to v}} \frac{\mathrm{pr}_{n}(w)}{\mathrm{deg}_{\text{out}(w)}}\,.
+            \label{eq:pagerank}
+        \end{equation*}
+    \end{minipage}
+    \\ ~\\
+$d = 0.85$; $|V| = 5$. 
+\begin{equation*}
+   \begin{array}{c | lllll}
+       n\backslash \pr & \pr(A) & \pr(B) & \pr(C) & \pr(D) & \pr(E) \\
+       \hline
+       0 & 1 & 1 & 1 & 1 & 1 \\
+       1 & 0.03 & 1.305 & 0.455 & 1.73 & 0.03 \\
+       2 & 0.03 & 0.06825 & 0.04275 & 1.526 & 0.03 \\
+       3 & 0.03 & 0.06825 & 0.04275 & 0.12435 & 0.03 
+   \end{array} 
+\end{equation*}
+\end{frame}
+\begin{frame}[fragile]{Der Graph}
+    \begin{minipage}{0.3\textwidth}
+        \begin{tikzpicture}
+            \node[vertex] (A) at (0,0) [label=above: A]{1};
+            \node[vertex] (B) at (1,1) [label=above: B]{1};
+            \node[vertex] (C) at (1,-1) [label=above: C]{1};
+            \node[vertex] (D) at (2,0) [label=above: D]{1};
+            \node[vertex] (E) at (3,1) [label=above: E]{1};
+            \draw[->] (A) -- (B); 
+            \draw[->] (A) -- (C); 
+            \draw[->] (B) -- (D); 
+            \draw[->] (C) -- (D); 
+            \draw[->] (E) -- (B); 
+        \end{tikzpicture}
+    \end{minipage}
+    \begin{minipage}{0.6\textwidth}
+        \begin{Verbatim}[textsize=\tiny]
+\begin{tikzpicture}
+    \node[vertex] (A) at (0,0) 
+                [label=above: A]{1};
+    \node[vertex] (B) at (1,1) 
+                [label=above: B]{1};
+    \node[vertex] (C) at (1,-1) 
+                [label=above: C]{1};
+    \node[vertex] (D) at (2,0) 
+                [label=above: D]{1};
+    \node[vertex] (E) at (3,1) 
+                [label=above: E]{1};
+    \draw[->] (A) -- (B); 
+    \draw[->] (A) -- (C); 
+    \draw[->] (B) -- (D); 
+    \draw[->] (C) -- (D); 
+    \draw[->] (E) -- (B); 
+\end{tikzpicture}
+        \end{Verbatim}
+    \end{minipage}
+\end{frame}
+\begin{frame}[fragile]{Graph mit Nodes proportional zu Wichtigkeit}
+    \begin{adjustbox}{max totalsize={.9\textwidth}{.7\textheight},center}
+        \begin{tikzpicture}
+    % minimum size = 40 * pr(Vertex)
+            \vertex (A) at (0,0) [minimum size = 1.2cm, label=above: A]{0.03};
+            \vertex (B) at (2,3) [minimum size = 2.73cm, label=above: B]{0.06825};
+            \vertex (C) at (2,-3) [minimum size = 1.71cm, label=above: C]{0.04275};
+            \vertex (D) at (5,0) [minimum size = 4.974cm, label=above: D]{0.12435};
+            \vertex (E) at (8,3) [minimum size = 1.2cm, label=above: E]{0.03};
+            \draw[->] (A) -- (B); 
+            \draw[->] (A) -- (C); 
+            \draw[->] (B) -- (D); 
+            \draw[->] (C) -- (D); 
+            \draw[->] (E) -- (B); 
+            ;
+        \end{tikzpicture}
+    \end{adjustbox}
+    \begin{Verbatim}[textsize=\tiny]
+\node[vertex] (A) at (0,0) 
+    [minimum size = 1.2cm, label=above: A]{0.03};
+    \end{Verbatim}
+\end{frame}
+\end{document}
